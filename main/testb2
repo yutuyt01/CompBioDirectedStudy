@@ -1,0 +1,20 @@
+
+import sys
+from PyQt6.QtWidgets import QApplication, QPushButton, QComboBox
+
+app = QApplication(sys.argv)
+button = QPushButton("Open ComboBox")
+combo = QComboBox()
+combo.addItems(["item1", "item2", "item3"])
+combo.move(50, 50)
+combo.hide()
+
+def showComboBox():
+    combo.show()
+
+button.clicked.connect(showComboBox)
+button.resize(150,50)
+button.move(50, 50)
+button.show()
+
+sys.exit(app.exec())
