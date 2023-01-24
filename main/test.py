@@ -6,6 +6,7 @@ import numpy as np
 from Bio import Entrez, SeqIO, pairwise2
 from Bio.Seq import Seq
 
+
 from Bio.pairwise2 import format_alignment
 Entrez.email = "compbioproject23@gmail.com"
 
