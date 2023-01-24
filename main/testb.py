@@ -5,9 +5,9 @@ from PyQt6.QtWidgets import *
 
 
 
-class Window(QWidget):
-    def __init__(self, parent = None):
-        super().__init__(parent)
+class Window(QMainWindow):
+    def __init__(self):
+        super().__init__()
         self.resize(400,400)
         self.setWindowTitle("Py-CRIT")
         self.button = button = QPushButton(icon=QIcon('C:\Comp Bio\pyTitle.png'))
@@ -15,13 +15,32 @@ class Window(QWidget):
         self.button.clicked.connect(self.onClick)
         layout = QVBoxLayout()
         layout.addWidget(self.button)
-        self.setLayout(layout)
+        container = QWidget()
+        container.setLayout(layout)
+        self.Tissue = QComboBox()
+        self.setCentralWidget(container)
+        
 
+    def onClick(self):
+        #self.Tissue = QComboBox()
+        self.Tissue.addItems(['brain','heart','lung'])
+        self.Tissue.activated.connect(self.current_text)
+        layout = QVBoxLayout()
+        layout.addWidget(self.Tissue)
+        container = QWidget()
+        container.setLayout(layout)
+        self.setCentralWidget(container)
+    
+    def current_text(self, _):
+        ctext = self.Tissue.currentText()
+        if ctext == 'heart':
+            print('you chose heart!')
+        if ctext == 'lung':
+            print('you chose lung!')
+        if ctext == 'brain':
+            print('you chose brain!')
 
-    def onClick(self, parent=None):
-        Tissue = QComboBox()
-        Tissue.addItems(['brain','heart','lung'])
-        Tissue.show()
+        
 
     
 if __name__ == "__main__":
