@@ -1,5 +1,8 @@
+import os
 from compare import compareClass
 
-compareTypes = compareClass("bone_marrow.tsv")
+compareTypes = compareClass("adipose_tissue.tsv")
+
 
 compareTypes.compare()
+print(os.getcwd())

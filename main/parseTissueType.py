@@ -5,9 +5,9 @@ class tissueBase:
     def __init__(self, tissueType, isTFactors):
         if (isTFactors == False):
             self.tissueTypeFile = tissueType
-            self.data = pd.DataFrame(data = pd.read_table(os.path.join('C:/Users/shang/OneDrive/Documents/Comp Bio 2022-23/CompBioDirectedStudy/TissueFiles/', self.tissueTypeFile), header=0,))
+            self.data = pd.DataFrame(data = pd.read_table(os.path.join(os.getcwd(), 'TissueFiles/', self.tissueTypeFile), header=0,))
         else: 
-            self.data = pd.DataFrame(data = pd.read_csv('C:/Users/shang/OneDrive/Documents/Comp Bio 2022-23/CompBioDirectedStudy/DataBaseExtract_v_1.01.csv', header=0,))
+            self.data = pd.DataFrame(data = pd.read_csv(os.path.join(os.getcwd(), 'DataBaseExtract_v_1.01.csv'), header=0,))
             self.formatCSV()
     """inputColumns accepts an array of columns found in TissueTypes."""
     def returnColumnData(self, inputColumns):   
