@@ -23,7 +23,9 @@ class Window(QMainWindow):
 
     def onClick(self):
         #self.Tissue = QComboBox()
-        self.Tissue.addItems(['brain','heart','lung'])
+        self.Tissue.addItems(['Brain','Heart','Lung'])
+        font = QFont('Arial',50)
+        self.Tissue.setFont(font)
         self.Tissue.activated.connect(self.current_text)
         layout = QVBoxLayout()
         layout.addWidget(self.Tissue)
