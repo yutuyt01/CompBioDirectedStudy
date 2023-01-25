@@ -20,9 +20,9 @@ class compareClass:
         aligned = []
         alignedDF = pd.Series()
         for i, v in tissueAligned.items():
-            print(v)
+            #print(v)
             if v in TFactorAligned.values:
-                print("found")
+                #print("found")
                 aligned.append(v)
         alignedS = pd.Series(data=aligned)
         final = pd.concat([alignedDF, alignedS])
