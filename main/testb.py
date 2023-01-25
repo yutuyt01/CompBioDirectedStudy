@@ -33,13 +33,13 @@ class Window(QMainWindow):
         container.setLayout(layout)
         self.setCentralWidget(container)
     
-    def current_text(self, _):
+    def current_text(self):
         ctext = self.Tissue.currentText()
-        if ctext == 'heart':
+        if ctext == 'Heart':
             print('you chose heart!')
-        if ctext == 'lung':
+        if ctext == 'Lung':
             print('you chose lung!')
-        if ctext == 'brain':
+        if ctext == 'Brain':
             print('you chose brain!')
 
         
