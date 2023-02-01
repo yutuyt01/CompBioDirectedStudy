@@ -2,8 +2,8 @@ import pandas as pd
 import os
 
 class tissueBase:
-    def __init__(self, tissueType, isTFactors):
-        if (isTFactors == False):
+    def __init__(self, tissueType, isTFactors, elevated):
+        if (isTFactors == False) and (elevated == True):
             self.tissueTypeFile = tissueType
             self.data = pd.DataFrame(data = pd.read_table(os.path.join(os.getcwd(), 'TissueFiles/', self.tissueTypeFile), header=0,))
         else: 
