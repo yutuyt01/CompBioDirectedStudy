@@ -1,8 +1,10 @@
 import os
 from compare import compareClass
+from getGene import getGeneClass
 
-compareTypes = compareClass("adipose_tissue.tsv")
+compareTypes = compareClass("ovaryES.tsv")
+grabTool = getGeneClass()
 
+matchingIDs = compareTypes.compare()
+seqDF = grabTool.getSeqEnsembl(matchingIDs)
 
-compareTypes.compare()
-print(os.getcwd())
