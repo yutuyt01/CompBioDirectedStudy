@@ -2,9 +2,9 @@ import os
 from compare import compareClass
 from getGene import getGeneClass
 
-compareTypes = compareClass("ovaryES.tsv")
+compareTypes = compareClass("ovary.tsv", True)
 grabTool = getGeneClass()
 
 matchingIDs = compareTypes.compare()
-seqDF = grabTool.getSeqEnsembl(matchingIDs)
+print(grabTool.getSeqEnsembl(matchingIDs))
 

@@ -3,9 +3,13 @@ import os
 
 class tissueBase:
     def __init__(self, tissueType, isTFactors, elevated):
-        if (isTFactors == False) and (elevated == True):
+        if (isTFactors == False):
             self.tissueTypeFile = tissueType
-            self.data = pd.DataFrame(data = pd.read_table(os.path.join(os.getcwd(), 'TissueFiles/', self.tissueTypeFile), header=0,))
+            if (elevated == True):
+                self.epath = "Elevated Tissue/"
+            else: 
+                self.epath = "TissueFiles/"
+            self.data = pd.DataFrame(data = pd.read_table(os.path.join(os.getcwd(), self.epath, self.tissueTypeFile), header=0,))
         else: 
             self.data = pd.DataFrame(data = pd.read_csv(os.path.join(os.getcwd(), 'DataBaseExtract_v_1.01.csv'), header=0,))
             self.formatCSV()
