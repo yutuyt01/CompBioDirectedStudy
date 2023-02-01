@@ -5,10 +5,10 @@ from parseTissueType import tissueBase
 
 
 class compareClass:
-    def __init__(self, tissueType):
-        self.tissueData = tissueBase(tissueType, False)
+    def __init__(self, tissueType, elevated):
+        self.tissueData = tissueBase(tissueType, False, elevated)
         print(self.tissueData.data)
-        self.TFactorData = tissueBase(tissueType, True)
+        self.TFactorData = tissueBase(tissueType, True, False)
     def compare(self):
         tissueEnsembl = self.tissueData.returnColumnData("Ensembl")
         TFactorEnsembl = self.TFactorData.returnColumnData("Ensembl")
