@@ -11,3 +11,4 @@ matchingIDs = compareTypes.compare()
 print(grabTool.getSeqEnsembl(matchingIDs))
 
 
+#test
